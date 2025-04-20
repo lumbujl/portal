@@ -44,6 +44,9 @@ body{
   padding:1rem 2rem;
   box-shadow: 0 .2rem .5rem rgba(0,0,0,.3);
 }
+header a{
+  text-decoration: none;
+}
 
 .header .logo img{
   height: 4rem;
@@ -63,14 +66,16 @@ body{
 }
 
 .header nav ul li a{
-  font-size: 2rem;
+  font-size: 3rem;
   color:#666;
   text-decoration: none;
+  padding:1rem;
 }
 
 .header nav ul li a:hover{
   color:#000;
-  text-decoration:underline;
+  /* text-decoration:underline; */
+  background-color: #ff7a00;
 }
 
 .header .fa-bars{
@@ -83,7 +88,7 @@ body{
 
 .home .hero{
   min-height: 60vh;
-  background: url('/home.jpg') no-repeat;
+  background: url('/homepage-1.jpeg') no-repeat;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -116,12 +121,13 @@ body{
 
 
 .home .counting{
-  min-height: 40vh;
-  padding:2rem 0;
+  min-height: 30vh;
+  /* padding:2rem 0; */
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  margin: -100px;
 }
 
 .home .counting .box{
@@ -224,7 +230,8 @@ body{
 }
 
 .project{
-  min-height:100vh;
+  margin-top: -300px;
+  min-height:50vh;
   background:#333;
 }
 

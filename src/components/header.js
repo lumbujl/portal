@@ -7,10 +7,10 @@ const Header = () => {
     return (
         <nav>
             <ul>
-                <li><a href="#home">home</a></li>
-                <li><a href="#about">about</a></li>
-                <li><a href="#service">services</a></li>
-                <li><a href="#project">projects</a></li>
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#about">A propos</a></li>
+                <li><a href="#service">Services</a></li>
+                <li><a href="#project">Projects</a></li>
                 <li><a href="#contact">contact</a></li>
             </ul>
         </nav>
