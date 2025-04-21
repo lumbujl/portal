@@ -1,17 +1,61 @@
-import { fetchBlogs } from "./server/fetchBlogs";
+"use client"
+
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import 'bootstrap/dist/css/bootstrap.css';
+// import Link from "next/link";
+import { useState } from "react";
+import { registerClient } from "@/utils/appwrite";
 // Put any other imports below so that CSS from your
 // components takes precedence over default styles.
 import './style.css';
 import Header from '@/components/header';
 import { SiDrone } from "react-icons/si";
-import { TbGeometry } from "react-icons/tb";
+import { TbGeometry } from "react-icons/tb"
+import { registerForm } from "@/components/registerForm"
 
 
-export default async function Home() {
-    const blogs = await fetchBlogs();
+export default function Home() {
+    const [name, setName] = useState("");
+    const [firstname, setFirstname] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+
+    // const blogs = await fetchBlogs();
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        if (!email) {
+            alert("Email is required.");
+            return;
+        }
+        if (!name) {
+            alert("name is required.");
+            return;
+        }
+        if (!message) {
+            alert("message is required.");
+            return;
+        }
+        // if (password.length < 8) {
+        //     alert("Password must be at least 8 characters long.");
+        //     return;
+        // }
+
+
+        if (!firstname) {
+            alert("firstname is required.");
+            return;
+        }
+
+
+        // registerClient(email, name, firstname, message)
+        //     .then((account) => {
+        //         alert(`Your Message is sent successfully`);
+        //     })
+        //     .catch((error) => {
+        //         console.error(error);
+        //         alert("Error/A user with the same email exists.");
+        //     });
+    };
     return (
         <>
             <header className="header fixed-top">
@@ -41,10 +85,10 @@ export default async function Home() {
 
                     <div className="box">
                         <h1 className="count" data-count="1200">1200+</h1>
-                        <h3>Heures oeuvrés</h3>
+                        <h3>Heures ouvrées</h3>
                     </div>
 
-                    
+
                     <div className="box">
                         <h1 className="count" data-count="1000">120+</h1>
                         <h3>clients</h3>
@@ -55,7 +99,7 @@ export default async function Home() {
                         <h3>réalisations</h3>
                     </div>
 
-                </div> 
+                </div>
 
             </section>
 
@@ -86,7 +130,7 @@ export default async function Home() {
             </section>
 
 
-{/* 
+            {/* 
             <section id="service" className="service">
 
                 <h1 className="heading">Nos services</h1>
@@ -186,13 +230,13 @@ export default async function Home() {
                 <div className="contact-box-container mx-auto">
 
 
-               
-      
+
+
 
                     <div className="contact-box">
                         <i className="fas fa-map-marker-alt"></i>
                         <h3><p>📍 Basé à Bruxelles, interventions dans toute la Belgique.</p>
-      <br/></h3>
+                            <br /></h3>
                     </div>
 
                     <div className="contact-box">
@@ -207,9 +251,9 @@ export default async function Home() {
 
                 </div>
 
-                <div className="form-container mx-auto">
+                <div className="form-container mx-auto m-2">
 
-                    <form action="">
+                    {/* <form action="">
 
                         <div className="inputBox">
                             <input type="text" placeholder="prenom" />
@@ -219,7 +263,59 @@ export default async function Home() {
                         <textarea name="" id="" cols="30" rows="10" placeholder="message"></textarea>
                         <input type="submit" value="envoyer" />
 
-                    </form>
+                    </form> */}
+                    <form className="form" onSubmit={handleSubmit}>
+      <div className="inputBox">
+        <div className="form-group">
+          {/* <label htmlFor="name">Nom</label> */}
+          <input
+            id="name"
+            type="name"
+            value={name}
+            placeholder="Nom"
+            onChange={(e) => setName(e.target.value)}
+          />
+        </div>
+        <div className="form-group">
+          {/* <label htmlFor="firstname">Prenom</label> */}
+          <input
+            id="firstname"
+            type="firstnamer"
+            value={firstname}
+            placeholder="Prenom"
+            onChange={(e) => setFirstname(e.target.value)}
+          />
+        </div>
+      </div>
+      <div className="form-group">
+        <label htmlFor="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          value={email}
+          placeholder="Email"
+          onChange={(e) => setEmail(e.target.value)}
+        />
+      </div>
+
+
+      <div className="form-group">
+        <label htmlFor="message">Message</label>
+        <textarea
+          id="message"
+          type="message"
+          value={message}
+           cols="30" rows="10" placeholder="Message"
+          onChange={(e) => setMessage(e.target.value)}
+        ></textarea>
+
+      </div>
+
+      <button type="submit" className="submit-btn">
+        Envoyer
+      </button>
+
+    </form>
 
                 </div>
 
@@ -230,13 +326,13 @@ export default async function Home() {
 
             <section className="container-fluid footer">
 
-                <div className="row">
+                {/* <div className="row">
 
                     <div className="col-md-3">
                         <h2><img src="images/logo.png" alt="" /></h2>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi rerum facilis, deserunt ea commodi sed voluptatum beatae accusamus nisi pariatur.</p>
-                    </div>
-
+                    </div> */}
+{/* 
                     <div className="col-md-3">
                         <h2>our location</h2>
                         <div className="list">
@@ -256,16 +352,16 @@ export default async function Home() {
                             <a href="#">instagram</a>
                             <a href="#">pinterest</a>
                         </div>
-                    </div>
+                    </div> */}
 
-                    <div className="col-md-3 text-center text-md-left letter">
+                    {/* <div className="col-md-3 text-center text-md-left letter">
                         <h2>newsletter</h2>
                         <p>subscribe for latest updates</p>
                         <input type="email" placeholder="enter your email" />
                         <input type="submit" placeholder="subscribe" />
                     </div>
 
-                </div>
+                </div> */}
 
                 <h1 className="credit">created by <span>mr. web designer</span> | all rights reserved. </h1>
 

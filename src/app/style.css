@@ -127,11 +127,11 @@ header a{
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  margin: -100px;
+  margin: 0px;
 }
 
 .home .counting .box{
-  margin: 2rem 4rem;
+  margin: 2rem 3rem;
   text-align: center;
 }
 
@@ -230,7 +230,7 @@ header a{
 }
 
 .project{
-  margin-top: -300px;
+  margin-top: -100px;
   min-height:50vh;
   background:#333;
 }

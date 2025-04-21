@@ -9,8 +9,8 @@ const font = Inter({
 });
 
 export const metadata = {
-  title: "Home | Mountain Coders",
-  description: "Jump into the world of programming articles.",
+  title: "Accueil | Portail Entreprise",
+  description: "Meilleures offres en termes de solutions liées à votre habitation.",
 };
 
 export default function RootLayout({ children }) {
